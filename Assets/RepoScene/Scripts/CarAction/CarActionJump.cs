@@ -16,6 +16,8 @@ public class CarActionJump : CarActionBase
     {
         rb.AddForce(Vector3.up * car.jumpForce, ForceMode.Impulse);
         GameController.instance.ResetIsGround();
+
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
     }
 
     public override void OnUpdate(CarManager car)
@@ -24,6 +26,12 @@ public class CarActionJump : CarActionBase
         {
             car.ExitAction();
         }
+    }
+
+    public override void OnExit(CarManager car)
+    {
+        rb.constraints = RigidbodyConstraints.None;
+        rb.constraints = RigidbodyConstraints.FreezePositionX;
     }
 
     public override CarActionType GetActionType()
