@@ -8,6 +8,8 @@ public class GameController : MonoBehaviour
     public static GameController instance;
 
     public static readonly string groundTag = "Ground";
+    public static readonly string normalTag = "Car";
+    public static readonly string attackTag = "CarAttack";
 
     //ENCASULATION
     private bool isFailure = false;
@@ -33,6 +35,9 @@ public class GameController : MonoBehaviour
             }
         }
     }
+
+    private Vector3 hitoPos;
+    public Vector3 HitoPos { get { return hitoPos; } }
 
     private void Awake()
     {
@@ -62,15 +67,13 @@ public class GameController : MonoBehaviour
         SceneManager.LoadScene(sceneIndex);
     }
 
-    public void SetIsGround()
-    {
-        isGround = true;
-    }
+    public void SetIsGround() { isGround = true; }
 
-    public void ResetIsGround()
-    {
-        isGround = false;
-    }
+    public void ResetIsGround() { isGround = false; }
+
+    public void SetIsFailure() { isFailure = true; }
+
+    public void SetHitPos(Vector3 pos) { hitoPos = pos; }
 
     public void ScrollSpeedUp(float rize)
     {

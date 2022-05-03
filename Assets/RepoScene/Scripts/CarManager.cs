@@ -6,7 +6,6 @@ public class CarManager : MonoBehaviour
 {
     int framCount = 0;
 
-    public GameObject carBody;
     private Vector3 initialPos;
 
     //INHERITANCE, POLYMORPHISM and ABSTRACTION: Car Action
@@ -34,6 +33,7 @@ public class CarManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        actionAttack.OnStart(this);
         actionJump.OnStart(this);
         initialPos = transform.position;
     }
@@ -72,6 +72,16 @@ public class CarManager : MonoBehaviour
             return true;
         }
         return false;
+    }
+
+    public void SetNormalTag()
+    {
+        tag = GameController.normalTag;
+    }
+
+    public void SetAttackTag()
+    {
+        tag = GameController.attackTag;
     }
 
     public Vector3 GetInitialPos() { return initialPos; }
