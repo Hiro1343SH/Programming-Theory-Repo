@@ -7,6 +7,33 @@ public class GameController : MonoBehaviour
 {
     public static GameController instance;
 
+    public static readonly string groundTag = "Ground";
+
+    //ENCASULATION
+    private bool isFailure = false;
+    public bool IsFailure { get { return isFailure; } }
+
+    private bool isGround = false;
+    public bool IsGround { get { return isGround; } }
+
+    private readonly float maxScrollSpeed = 12f;
+    private readonly float initialScrollSpeed = 5f;
+    private float scrollSpeed;
+    public float ScrollSpeed
+    {
+        get
+        {
+            if (scrollSpeed > maxScrollSpeed)
+            {
+                return maxScrollSpeed;
+            }
+            else
+            {
+                return scrollSpeed;
+            }
+        }
+    }
+
     private void Awake()
     {
         if (instance != null)
@@ -18,23 +45,39 @@ public class GameController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    private void Start()
+    {
+        InitialSetting();
+    }
+
+    private void InitialSetting()
+    {
+        isFailure = false;
+        isGround = false;
+        scrollSpeed = initialScrollSpeed;
+    }
     public void LoadScene(int sceneIndex)
     {
+        InitialSetting();
         SceneManager.LoadScene(sceneIndex);
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void SetIsGround()
     {
-
+        isGround = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ResetIsGround()
     {
+        isGround = false;
+    }
 
+    public void ScrollSpeedUp(float rize)
+    {
+        scrollSpeed += rize;
     }
 }
+
 
 public enum CarActionType
 {

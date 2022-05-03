@@ -5853,6 +5853,63 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 25, y: 0, z: 0}
+--- !u!1001 &607368841
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8908633413426397729, guid: e23ed5004c12a5c45ab9814cdb22dc2e, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908633413426397729, guid: e23ed5004c12a5c45ab9814cdb22dc2e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908633413426397729, guid: e23ed5004c12a5c45ab9814cdb22dc2e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908633413426397729, guid: e23ed5004c12a5c45ab9814cdb22dc2e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908633413426397729, guid: e23ed5004c12a5c45ab9814cdb22dc2e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908633413426397729, guid: e23ed5004c12a5c45ab9814cdb22dc2e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908633413426397729, guid: e23ed5004c12a5c45ab9814cdb22dc2e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908633413426397729, guid: e23ed5004c12a5c45ab9814cdb22dc2e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908633413426397729, guid: e23ed5004c12a5c45ab9814cdb22dc2e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908633413426397729, guid: e23ed5004c12a5c45ab9814cdb22dc2e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908633413426397729, guid: e23ed5004c12a5c45ab9814cdb22dc2e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908633413426397731, guid: e23ed5004c12a5c45ab9814cdb22dc2e, type: 3}
+      propertyPath: m_Name
+      value: GameController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e23ed5004c12a5c45ab9814cdb22dc2e, type: 3}
 --- !u!1 &727575698
 GameObject:
   m_ObjectHideFlags: 0
@@ -8812,6 +8869,8 @@ GameObject:
   - component: {fileID: 848443665}
   - component: {fileID: 848443664}
   - component: {fileID: 848443663}
+  - component: {fileID: 848443666}
+  - component: {fileID: 848443667}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -8846,7 +8905,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 2
   m_CollisionDetection: 0
 --- !u!4 &848443665
 Transform:
@@ -8867,6 +8926,71 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &848443666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848443662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a1b579e80de754ebcdcd217bdfd2a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carBody: {fileID: 380902797}
+  speed: 30
+  turnSpeed: 80
+  straightBackSpeed: 30
+  attackForce: 0.01
+  attackRotateSpeed: 1520
+  vibrationSpeed: 3.14
+  attackCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2.7689395
+      outSlope: 2.7689395
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.06962453
+    - serializedVersion: 3
+      time: 0.52
+      value: 1.000001
+      inSlope: -0.011105506
+      outSlope: -0.011105506
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0.000007688999
+      inSlope: -1.5178736
+      outSlope: -1.5178736
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.11474634
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  jumpForce: 8
+--- !u!114 &848443667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848443662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d87a8773a4782f47a7c14f0a1f100cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &861022758
 GameObject:
   m_ObjectHideFlags: 0
@@ -9093,7 +9217,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17330
+  m_Name: pb_Mesh17362
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9257,7 +9381,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17312
+  m_Name: pb_Mesh17342
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9500,7 +9624,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17340
+  m_Name: pb_Mesh17372
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -9860,7 +9984,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17410
+  m_Name: pb_Mesh17452
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -11543,7 +11667,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17302
+  m_Name: pb_Mesh17322
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

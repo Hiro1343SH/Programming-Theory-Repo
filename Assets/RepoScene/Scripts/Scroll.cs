@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Scroll : MonoBehaviour
 {
-    private float scrollSpeed = 5f;
     private float wallSize;
+
+    //For scroll speed
+    private float timer = 0;
+    private readonly float interval = 5f;
+    private readonly float rize = 0.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,12 +21,25 @@ public class Scroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(scrollSpeed * Time.deltaTime * Vector3.left);
+        transform.Translate(GameController.instance.ScrollSpeed * Time.deltaTime * Vector3.left);
 
         Vector3 currentPos = transform.position;
         if (currentPos.x < -wallSize / 2)
         {
             transform.position = Vector3.zero;
+        }
+
+        ScrollSpeedUp();
+
+    }
+
+    private void ScrollSpeedUp()
+    {
+        timer+=Time.deltaTime;
+        if(timer > interval)
+        {
+            GameController.instance.ScrollSpeedUp(rize);
+            timer = 0;
         }
     }
 }
